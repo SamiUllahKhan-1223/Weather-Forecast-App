@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beautiful, responsive Weather Forecast app with live weather updates, theme switching, and a modern glassmorphism design. Get accurate weather info for any city worldwide.">
+  <title>Weather Forecast </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%' stop-color='%234a90e2'/%3E%3Cstop offset='100%' stop-color='%23b0bec5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='black'/%3E%3Ctext x='8' y='48' font-size='36' font-family='Roboto,Arial,sans-serif' font-weight='bold' fill='url(%23g)'>W</text%3E%3Ctext x='34' y='48' font-size='36' font-family='Roboto,Arial,sans-serif' font-weight='bold' fill='url(%23g)'>F</text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo-title">
+        <span class="wf-logo" aria-label="WF Logo">
+          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4a90e2"/>
+                <stop offset="100%" stop-color="#b0bec5"/>
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="16" fill="black"/>
+            <text x="8" y="48" font-size="36" font-family="Roboto,Arial,sans-serif" font-weight="bold" fill="url(#g)">W</text>
+            <text x="34" y="48" font-size="36" font-family="Roboto,Arial,sans-serif" font-weight="bold" fill="url(#g)">F</text>
+          </svg>
+        </span>
+        <h1>Weather Forecast</h1>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle Theme">
+        <span id="theme-icon">🌞</span>
+      </button>
+    </header>
+    <main>
+      <form id="search-form" autocomplete="off">
+        <input type="text" id="city-input" placeholder="Enter city name (e.g. Quetta,PK)" required>
+        <button type="submit">Search</button>
+      </form>
+      
+      <section id="weather" class="weather-card hidden">
+        <div class="weather-main">
+          <div class="weather-icon" id="weather-icon"></div>
+          <div class="weather-info">
+            <h2 id="city-name"></h2>
+            <p id="description"></p>
+            <div class="temp">
+              <span id="temperature-c"></span> <span class="divider">|</span> <span id="temperature-f"></span>
+            </div>
+          </div>
+        </div>
+        <div class="weather-details">
+          <div><span>Humidity:</span> <span id="humidity"></span></div>
+          <div><span>Precipitation:</span> <span id="precipitation"></span></div>
+          <div><span>Wind:</span> <span id="wind"></span></div>
+        </div>
+      </section>
+      <div id="error-message" class="error-message hidden"></div>
+    </main>
+    <button id="location-btn" type="button" aria-label="Use My Location" class="location-btn">
+      <span class="location-icon">📍</span> Use My Location
+    </button>
+    <footer>
+      <p class="footer-small">Powered by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a></p>
+      <p class="footer">© 2025 | Made with <span aria-label="love" style="color:#e25555;">♥</span> by Sami Khan</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
